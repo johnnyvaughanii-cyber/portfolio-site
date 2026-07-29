@@ -55,6 +55,10 @@
     <li><strong>Vendor risk scorer</strong> — applies a weighted rubric to questionnaire responses and assigns a risk tier for TPRM triage.</li>
     <li><strong>Log analyzer</strong> — parses raw authentication logs and flags after-hours access, failed logins, and privileged activity.</li>
     <li><strong>Access expiration checker</strong> — flags overdue and due-soon access reviews, recertifications, and vendor assessments.</li>
+    <li><strong>Findings summary</strong> — tallies a findings register by severity for an instant Critical/High/Medium/Low breakdown instead of counting by hand.</li>
+    <li><strong>Control crosswalk mapper</strong> — maps NIST SP 800-53 controls to ISO 27001 and reports both coverage and gaps, so overlapping framework obligations can be tested once.</li>
+    <li><strong>Control library</strong> — tracks a control inventory with owners and last-tested dates, and flags which controls are overdue for testing.</li>
+    <li><strong>Findings deduplicator</strong> — normalizes finding descriptions and removes duplicates, which matters when registers get merged across sources or assessment cycles.</li>
   </ul>
   <p>These are functional prototypes tested on synthetic data, not production systems. <a href="https://github.com/johnnyvaughanii-cyber/GRC-Automation">Source on GitHub</a></p>
 
