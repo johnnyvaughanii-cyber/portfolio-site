@@ -54,3 +54,21 @@ a {
 a:hover {
   border-bottom-color: var(--accent);
 }
+
+.contact {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 1.25rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+li strong {
+  color: var(--ink);
+}

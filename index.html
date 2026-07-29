@@ -3,17 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Johnny Vaughan — GRC Engineering</title>
+  <title>Johnny Vaughan II — Technology Risk, GRC, IT Audit</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Johnny Vaughan</h1>
-  <p>GRC and IT audit, moving into GRC engineering. I am automating the controls I used to test by hand.</p>
+
+  <h1>Johnny Vaughan II</h1>
+  <p>Technology risk, GRC, and IT audit. Eight years across financial services, healthcare, federal and DoD environments. CRISC and CTPRP certified. Currently building automation for the compliance work I used to do by hand.</p>
+
+  <p class="contact">
+    Chesapeake, VA &middot;
+    <a href="mailto:vaughanjc2@outlook.com">vaughanjc2@outlook.com</a> &middot;
+    <a href="https://linkedin.com/in/johnnyvaughan2">LinkedIn</a> &middot;
+    <a href="https://github.com/johnnyvaughanii-cyber">GitHub</a>
+  </p>
+
+  <h2>What I Do</h2>
+
+  <p>I assess controls, test whether they actually operate, and write up what I find in a way the business can act on. Most of that has been in regulated environments where the evidence has to hold up to someone else's scrutiny — external auditors, federal assessors, banking regulators.</p>
+
+  <p>The through-line across nine roles has been the same question in different clothes: is this control real, and can you prove it? I'm now answering that question with code as well as documentation.</p>
+
+  <h2>Experience</h2>
+
+  <h3>Global IS Risk and Compliance Analyst — PRA Group</h3>
+  <p>SOX ITGC, PCI DSS, and GDPR control evaluation at an international financial services organization. Ran recurring joiner/mover/leaver, role-based, and privileged access reviews, including exception investigation and closure validation. Owned Proofpoint phishing simulations and the Power BI reporting behind them. Participated in Change Advisory Board and assessed implementation risk.</p>
+
+  <h3>Senior Security Analyst — Azzur Group / SAP NS2</h3>
+  <p>Led the NIST SP 800-53 Revision 4 to Revision 5 control and documentation update for a DoD and U.S. Army-aligned SAP cloud authorization environment. Maintained System Security Plans, FIPS 199 categorizations, privacy documentation, and evidence repositories supporting FedRAMP and RMF authorization readiness. Ran functional and tabletop incident response and disaster recovery testing with engineers and system owners.</p>
+
+  <h3>Senior Associate, Third-Party Risk — KPMG</h3>
+  <p>Planned and executed 40+ global third-party technology risk assessments for financial services and healthcare clients, end to end: scoping, evidence requests, interviews, control evaluation, risk rating, reporting, remediation, and closure. Led ISO 27001 and GDPR assessments for Lloyds Banking Group. Helped establish the third-party risk program at City of Hope. Challenged incomplete evidence, unsupported control assertions, and remediation plans that did not address the underlying requirement.</p>
+
+  <h3>Cybersecurity Specialist IV — MindPoint Group (Citizens Bank)</h3>
+  <p>Recurring third- and fourth-party risk assessments using a customized NIST SP 800-53 methodology aligned to GLBA, FFIEC, COBIT, and PCI DSS. Helped transition the program from the Shared Assessments SIG to a NIST-based model and standardize evidence, risk-rating, and reporting practices.</p>
+
+  <h3>Technical Writer / Cloud Implementation Specialist — NXT (Maryland FiRST)</h3>
+  <p>Developed cybersecurity, cloud, and system-support procedures for a public-safety telecommunications program, translating technical requirements into controlled documentation validated with application and system owners.</p>
+
+  <h3>IT Specialist / Security Controls Assessor — Paradigm</h3>
+  <p>NIST SP 800-53A and 800-171 security control assessments across Windows, network, application, and cloud environments. Policy review, personnel interviews, configuration examination, and control testing. Used Tenable Nessus and Wireshark to evaluate vulnerabilities and network safeguards. Wrote the Security Assessment Reports.</p>
 
   <h2>Projects</h2>
 
   <h3>GRC Automation Toolkit</h3>
-  <p>Ten Python tools for access reconciliation, control sampling, findings analysis, and framework crosswalks.</p>
-  <p><a href="https://github.com/johnnyvaughanii-cyber/GRC-Automation">github.com/johnnyvaughanii-cyber/GRC-Automation</a></p>
+  <p>Ten Python tools that automate compliance tasks I have done manually for years. Built independently, tested against synthetic data, all source public.</p>
+  <ul>
+    <li><strong>Access reconciliation</strong> — compares system accounts against an HR roster and flags access that should have been removed. Tested against a 505-record synthetic dataset with a known answer key; identified all 25 planted exceptions, 20 terminated users and 5 orphaned service accounts.</li>
+    <li><strong>Control testing sample generator</strong> — reproducible random sampling with a fixed seed, so a reviewer can re-create and defend the exact selection.</li>
+    <li><strong>Findings register analyzer</strong> — calculates finding age and groups by owner to show who is carrying the most and whose are oldest.</li>
+    <li><strong>Vendor risk scorer</strong> — applies a weighted rubric to questionnaire responses and assigns a risk tier for TPRM triage.</li>
+    <li><strong>Log analyzer</strong> — parses raw authentication logs and flags after-hours access, failed logins, and privileged activity.</li>
+    <li><strong>Access expiration checker</strong> — flags overdue and due-soon access reviews, recertifications, and vendor assessments.</li>
+  </ul>
+  <p>These are functional prototypes tested on synthetic data, not production systems. <a href="https://github.com/johnnyvaughanii-cyber/GRC-Automation">Source on GitHub</a></p>
+
+  <h3>This Site — AWS Static Hosting</h3>
+  <p>Deployed from a CloudFormation template: private S3 bucket, CloudFront distribution with Origin Access Control so nothing but CloudFront can read the bucket, HTTPS enforced. Infrastructure defined as code and reproducible.</p>
+  <p>I reviewed the template before running it and logged two gaps against my own site: encryption is not explicitly declared, and access logging is not enabled. Neither breaks anything — S3 encrypts by default — but a control that is not declared is a control an assessor cannot verify. <a href="https://github.com/johnnyvaughanii-cyber/portfolio-site">Source on GitHub</a></p>
+
+  <h3>GRC Engineering Pipeline — In Progress</h3>
+  <p>A six-week build taking cloud infrastructure from working to audit-defensible: compliant infrastructure as code in Terraform, policy as code in Rego, a CI gate that blocks non-compliant pull requests, cryptographically signed evidence, and a NIST SP 800-53 control mapping in OSCAL. Adding one piece per week.</p>
+
+  <h2>Frameworks</h2>
+  <p>NIST SP 800-53 and 800-53A, NIST SP 800-171, RMF, FedRAMP, ISO 27001, SOX ITGC, PCI DSS, GLBA, FFIEC, COBIT, GDPR, HIPAA, HITRUST, FIPS 199</p>
+
+  <h2>Tools</h2>
+  <p>Python, pandas, Power BI, Excel, Git, SQL-adjacent data work, RSA Archer, OneTrust, Diligent, eMASS, Xacta, ServiceNow, Jira, Tenable Nessus, Wireshark, Proofpoint, AWS, Azure, Terraform</p>
+
+  <h2>Certifications</h2>
+  <p>CRISC — Certified in Risk and Information Systems Control, ISACA<br>
+  CTPRP — Certified Third Party Risk Professional, Shared Assessments</p>
+
 </body>
 </html>
