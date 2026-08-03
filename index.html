@@ -69,6 +69,8 @@
   <h3>GRC Engineering Pipeline — In Progress</h3>
   <p>A six-week build taking cloud infrastructure from working to audit-defensible: compliant infrastructure as code in Terraform, policy as code in Rego, a CI gate that blocks non-compliant pull requests, cryptographically signed evidence, and a NIST SP 800-53 control mapping in OSCAL. Adding one piece per week.</p>
 
+  <p><strong>Week 1 — Compliant S3 Infrastructure as Code.</strong> Terraform module provisioning an S3 bucket that enforces five NIST SP 800-53 controls: SC-28 (server-side encryption by default), AC-3 (public access blocked on all four vectors), CM-6 (versioning and four mandatory tags via provider default_tags), and AU-3/AU-6 (access logging to a segregated log bucket). Emits machine-readable proof of every control as JSON rather than screenshots, and includes a Terraform output that surfaces the encryption algorithm in effect, so the attestation cannot drift from what it attests to. <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline">Source on GitHub</a></p>
+
   <h2>Frameworks</h2>
   <p>NIST SP 800-53 and 800-53A, NIST SP 800-171, RMF, FedRAMP, ISO 27001, SOX ITGC, PCI DSS, GLBA, FFIEC, COBIT, GDPR, HIPAA, HITRUST, FIPS 199</p>
 
