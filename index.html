@@ -61,7 +61,10 @@
     <li><strong>Findings deduplicator</strong> — normalizes finding descriptions and removes duplicates, which matters when registers get merged across sources or assessment cycles.</li>
   </ul>
   <p>These are functional prototypes tested on synthetic data, not production systems. <a href="https://github.com/johnnyvaughanii-cyber/GRC-Automation">Source on GitHub</a></p>
-
+  
+  <h3>Quarterly UAR Agent</h3>
+  <p>An agent that runs a quarterly user access review and packages the result as a signed evidence bundle. Deterministic Python tools produce every count; the model routes to the right tool and writes the narrative. Every figure in the narrative appears verbatim in a tool result recorded in the manifest, so the summary can be checked against the data rather than trusted.</p>
+  <p>The bundle contains the tool output, a manifest carrying SHA-256 hashes of every input file and every tool result, the full conversation record, and a checksum file covering all of it. The directory is archived and signed with Cosign keyless, and verification fails on a one-byte change. Prototype on synthetic data. <a href="https://github.com/johnnyvaughanii-cyber/uar-agent">github.com/johnnyvaughanii-cyber/uar-agent</a></p>
   <h3>This Site — AWS Static Hosting</h3>
   <p>Deployed from a CloudFormation template: private S3 bucket, CloudFront distribution with Origin Access Control so nothing but CloudFront can read the bucket, HTTPS enforced. Infrastructure defined as code and reproducible.</p>
   <p>I reviewed the template before running it and logged two gaps against my own site: encryption is not explicitly declared, and access logging is not enabled. Neither breaks anything — S3 encrypts by default — but a control that is not declared is a control an assessor cannot verify. <a href="https://github.com/johnnyvaughanii-cyber/portfolio-site">Source on GitHub</a></p>
