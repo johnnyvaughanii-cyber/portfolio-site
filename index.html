@@ -3,90 +3,348 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Johnny Vaughan II — Technology Risk, GRC, IT Audit</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Johnny Vaughan II | Technology Risk, GRC, IT Audit</title>
+  <meta name="description" content="Technology risk, GRC, and IT audit professional building compliance automation: policy as code, signed evidence, and OSCAL control mappings.">
+  <meta property="og:title" content="Johnny Vaughan II | Technology Risk, GRC, IT Audit">
+  <meta property="og:description" content="A GRC engineering pipeline, a Python automation toolkit, and 8 years of control testing in regulated environments.">
+  <meta property="og:url" content="https://portfolio.johnnyvaughanllc.com/">
+  <meta property="og:type" content="website">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var saved = localStorage.getItem('jv-theme');
+        if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preload" href="fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261005">
+  <script src="app.js?v=20261005" defer></script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <h1>Johnny Vaughan II</h1>
-  <p>Technology Risk, GRC, and IT audit. Eight years across financial services, healthcare, federal and DoD environments. CRISC and CTPRP certified. Currently building automation for the compliance work I used to do by hand.</p>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="#top">Johnny Vaughan II</a>
+      <nav aria-label="Sections">
+        <ul class="nav-links">
+          <li><a href="#pipeline">Pipeline</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="7.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.75a7.25 7.25 0 0 1 0 14.5z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </header>
 
-  <p class="contact">
-    Chesapeake, VA &middot;
-    <a href="mailto:vaughanjc2@outlook.com">vaughanjc2@outlook.com</a> &middot;
-    <a href="https://linkedin.com/in/johnnyvaughan2">LinkedIn</a> &middot;
-    <a href="https://github.com/johnnyvaughanii-cyber">GitHub</a>
-  </p>
+  <main id="main">
+    <section class="hero" id="top">
+      <h1 class="name">Johnny Vaughan II</h1>
+      <p class="thesis">Is this control real, and can you prove it?</p>
+      <p class="lede">Technology risk, GRC, and IT audit. 8 years across financial services, healthcare, and federal and DoD environments. CRISC and CTPRP certified. I'm building automation for the compliance work I used to do by hand.</p>
+      <ul class="contact">
+        <li>Chesapeake, VA</li>
+        <li><a href="mailto:vaughanjc2@outlook.com">vaughanjc2@outlook.com</a></li>
+        <li><a href="https://linkedin.com/in/johnnyvaughan2">LinkedIn</a></li>
+        <li><a href="https://github.com/johnnyvaughanii-cyber">GitHub</a></li>
+        <li><a href="https://www.johnnyvaughanllc.com">Johnny Vaughan, LLC</a></li>
+      </ul>
+      <p class="live live-latest" data-live="latest" hidden></p>
+    </section>
 
-  <h2>What I Do</h2>
+    <section class="about" aria-labelledby="about-h">
+      <h2 id="about-h" class="visually-hidden">What I do</h2>
+      <p>I assess controls, test whether they actually operate, and write up what I find in a way the business can act on. Most of that has been in regulated environments where the evidence has to hold up to someone else's scrutiny: external auditors, federal assessors, banking regulators.</p>
+      <p>The through-line across 9 roles has been the same question in different clothes. I'm now answering it with code as well as documentation.</p>
+    </section>
 
-  <p>I assess controls, test whether they actually operate, and write up what I find in a way the business can act on. Most of that has been in regulated environments where the evidence has to hold up to someone else's scrutiny — external auditors, federal assessors, banking regulators.</p>
+    <section class="pipeline" id="pipeline" aria-labelledby="pipeline-h">
+      <div class="section-head">
+        <h2 id="pipeline-h">GRC engineering pipeline</h2>
+        <p>A 6-stage build that takes AWS infrastructure from deployed to audit-defensible. Each stage feeds the next, and every control claim links to evidence an assessor can verify without asking me for it. Built between July 30 and August 17, 2026, for the GRC Engineering Club pipeline challenge. All 6 stages are complete.</p>
+        <p class="links">
+          <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/blob/main/week-6/PORTFOLIO-CASE-STUDY.md">Read the case study</a>
+          <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline">Source on GitHub</a>
+        </p>
+        <p class="live" data-live="grc-pipeline" hidden></p>
+      </div>
 
-  <p>The through-line across nine roles has been the same question in different clothes: is this control real, and can you prove it? I'm now answering that question with code as well as documentation.</p>
+      <div class="chain">
+        <div class="stages" role="tablist" aria-label="Pipeline stages">
+          <button class="stage" role="tab" id="tab-1" aria-controls="stage-1" aria-selected="true" type="button">
+            <span class="stage-num">1</span>
+            <span class="stage-name">Infrastructure as code</span>
+            <span class="stage-controls"><span class="nb">SC-28</span>, <span class="nb">AC-3</span>, <span class="nb">CM-6</span>, <span class="nb">AU-3</span></span>
+          </button>
+          <button class="stage" role="tab" id="tab-2" aria-controls="stage-2" aria-selected="false" tabindex="-1" type="button">
+            <span class="stage-num">2</span>
+            <span class="stage-name">Policy as code</span>
+            <span class="stage-controls"><span class="nb">SC-28</span>, <span class="nb">AC-3</span>, <span class="nb">CM-6</span></span>
+          </button>
+          <button class="stage" role="tab" id="tab-3" aria-controls="stage-3" aria-selected="false" tabindex="-1" type="button">
+            <span class="stage-num">3</span>
+            <span class="stage-name">CI gate</span>
+            <span class="stage-controls">Blocks failing PRs</span>
+          </button>
+          <button class="stage" role="tab" id="tab-4" aria-controls="stage-4" aria-selected="false" tabindex="-1" type="button">
+            <span class="stage-num">4</span>
+            <span class="stage-name">Signed evidence</span>
+            <span class="stage-controls">Chain of custody</span>
+          </button>
+          <button class="stage" role="tab" id="tab-5" aria-controls="stage-5" aria-selected="false" tabindex="-1" type="button">
+            <span class="stage-num">5</span>
+            <span class="stage-name">Cloud monitoring</span>
+            <span class="stage-controls"><span class="nb">AU-2</span>, <span class="nb">AU-12</span>, <span class="nb">AU-10</span></span>
+          </button>
+          <button class="stage" role="tab" id="tab-6" aria-controls="stage-6" aria-selected="false" tabindex="-1" type="button">
+            <span class="stage-num">6</span>
+            <span class="stage-name">OSCAL mapping</span>
+            <span class="stage-controls">NIST SP 800-53 Rev. 5</span>
+          </button>
+        </div>
+        <a class="seal" href="#verify" aria-label="Chain intact. Verify it yourself">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1.25"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.5 2.5"/>
+            <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="0.6"/>
+            <path d="M42 61l12 12 25-27" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Chain intact</span>
+        </a>
+      </div>
 
-  <h2>Experience</h2>
+      <div class="panels">
+        <article class="panel" role="tabpanel" id="stage-1" aria-labelledby="tab-1" tabindex="0">
+          <h3><span class="panel-num">Week 1</span> Compliant infrastructure as code</h3>
+          <p class="tooling">Terraform, AWS S3</p>
+          <p>Terraform provisions an S3 bucket and a segregated log bucket that enforce 5 NIST SP 800-53 Rev. 5 controls: server-side encryption by default (SC-28), public access blocked on all 4 vectors (AC-3), versioning and 4 mandatory tags through the provider <code>default_tags</code> block (CM-6), and access logging to the log bucket (AU-3, AU-6).</p>
+          <p>The proof is the Terraform plan captured as JSON, not screenshots. A Terraform output surfaces the encryption algorithm in effect, so the attestation can't drift from what it attests to.</p>
+          <p class="links"><a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-1">Week 1 source</a></p>
+        </article>
 
-  <h3>Global IS Risk and Compliance Analyst — PRA Group</h3>
-  <p>SOX ITGC, PCI DSS, and GDPR control evaluation at an international financial services organization. Ran recurring joiner/mover/leaver, role-based, and privileged access reviews, including exception investigation and closure validation. Owned Proofpoint phishing simulations and the Power BI reporting behind them. Participated in Change Advisory Board and assessed implementation risk.</p>
+        <article class="panel" role="tabpanel" id="stage-2" aria-labelledby="tab-2" tabindex="0">
+          <h3><span class="panel-num">Week 2</span> Executable controls</h3>
+          <p class="tooling">Open Policy Agent, Rego</p>
+          <p>3 Rego policies read the Terraform plan and return a verdict on SC-28, AC-3, and CM-6, with 6 unit tests covering the compliant and the violating case for each. The policies match resources by declared reference rather than by name, because the bucket name doesn't exist yet at plan time.</p>
+          <p class="finding"><strong>What testing caught.</strong> The first run against real infrastructure surfaced 36 false positives from a control scoped too broadly. The CM-6 tag rule was checking resources that can't carry tags, and filtering on <code>tags_all</code> scoped it correctly.</p>
+          <p class="links"><a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-2">Week 2 source</a></p>
+        </article>
 
-  <h3>Senior Security Analyst — Azzur Group / SAP NS2</h3>
-  <p>Led the NIST SP 800-53 Revision 4 to Revision 5 control and documentation update for a DoD and U.S. Army-aligned SAP cloud authorization environment. Maintained System Security Plans, FIPS 199 categorizations, privacy documentation, and evidence repositories supporting FedRAMP and RMF authorization readiness. Ran functional and tabletop incident response and disaster recovery testing with engineers and system owners.</p>
+        <article class="panel" role="tabpanel" id="stage-3" aria-labelledby="tab-3" tabindex="0">
+          <h3><span class="panel-num">Week 3</span> A gate that blocks</h3>
+          <p class="tooling">GitHub Actions, Conftest 0.69.0</p>
+          <p>A GitHub Actions workflow runs the policies against the plan on every pull request and blocks the merge when a control fails. Conftest is pinned for reproducibility, the pipeline fails closed, and branch protection on main requires the check.</p>
+          <p class="finding"><strong>What testing caught.</strong> The first attempt at the blocked case passed the gate. The SC-28 rule confirmed an encryption resource existed without reading the algorithm it declared, so <code>sse_algorithm = "none"</code> got through. A second rule now checks the algorithm against an approved allowlist.</p>
+          <p class="links">
+            <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/pull/1">PR #1, passed and merged</a>
+            <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/pull/2">PR #2, blocked</a>
+          </p>
+        </article>
 
-  <h3>Senior Associate, Third-Party Risk — KPMG</h3>
-  <p>Planned and executed 40+ global third-party technology risk assessments for financial services and healthcare clients, end to end: scoping, evidence requests, interviews, control evaluation, risk rating, reporting, remediation, and closure. Led ISO 27001 and GDPR assessments for Lloyds Banking Group. Helped establish the third-party risk program at City of Hope. Challenged incomplete evidence, unsupported control assertions, and remediation plans that did not address the underlying requirement.</p>
+        <article class="panel" role="tabpanel" id="stage-4" aria-labelledby="tab-4" tabindex="0">
+          <h3><span class="panel-num">Week 4</span> Evidence you can trust</h3>
+          <p class="tooling">Cosign, Sigstore keyless signing</p>
+          <p>The workflow bundles its evidence, writes a SHA-256 sidecar, and signs the archive with Cosign keyless signing. There's no stored private key. The Sigstore certificate binds the signature to this repository and workflow, and the event is recorded in a public transparency log outside my AWS account.</p>
+          <p class="finding"><strong>Design decision.</strong> Signing runs even when the gate fails, because a run that blocked a merge is the run whose record matters most. A tamper test that appends 1 byte to the 262-byte archive fails verification immediately.</p>
+          <p class="links"><a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-4">Week 4 source</a></p>
+        </article>
 
-  <h3>Cybersecurity Specialist IV — MindPoint Group (Citizens Bank)</h3>
-  <p>Recurring third- and fourth-party risk assessments using a customized NIST SP 800-53 methodology aligned to GLBA, FFIEC, COBIT, and PCI DSS. Helped transition the program from the Shared Assessments SIG to a NIST-based model and standardize evidence, risk-rating, and reporting practices.</p>
+        <article class="panel" role="tabpanel" id="stage-5" aria-labelledby="tab-5" tabindex="0">
+          <h3><span class="panel-num">Week 5</span> Native monitoring controls</h3>
+          <p class="tooling">AWS CloudTrail</p>
+          <p>A multi-region CloudTrail writes to a private, encrypted bucket with log file validation on, producing signed hourly digest files (AU-2, AU-12, AU-10). Digests arrived from 17 regions within 20 minutes, and <code>validate-logs</code> returned 1/1 digest files valid. The bucket policy pins the CloudTrail service principal to this trail with an <code>aws:SourceArn</code> condition. Everything was torn down the same day.</p>
+          <p class="finding finding-open"><strong>Open item.</strong> RA-5 and SI-4 aren't implemented. Security Hub returns <code>SubscriptionRequiredException</code> on this account, so the gap is documented in the code rather than worked around.</p>
+          <p class="links"><a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-5">Week 5 source</a></p>
+        </article>
 
-  <h3>Technical Writer / Cloud Implementation Specialist — NXT (Maryland FiRST)</h3>
-  <p>Developed cybersecurity, cloud, and system-support procedures for a public-safety telecommunications program, translating technical requirements into controlled documentation validated with application and system owners.</p>
+        <article class="panel" role="tabpanel" id="stage-6" aria-labelledby="tab-6" tabindex="0">
+          <h3><span class="panel-num">Week 6</span> Speak the auditor's language</h3>
+          <p class="tooling">OSCAL 1.2.1, compliance-trestle</p>
+          <p>An OSCAL component definition and profile, both validating clean against OSCAL 1.2.1. The profile selects 4 controls from the NIST SP 800-53 Rev. 5 catalog. Each implemented requirement names the Terraform resource that enforces it and links to the signed evidence bundle.</p>
+          <p class="finding"><strong>The traversal.</strong> I verified the chain the way an outside assessor would. I followed the evidence link from the OSCAL document, downloaded the bundle into a directory that had never held it, and confirmed both the hash and the signature.</p>
+          <p class="links"><a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-6">Week 6 source</a></p>
+        </article>
+      </div>
 
-  <h3>IT Specialist / Security Controls Assessor — Paradigm</h3>
-  <p>NIST SP 800-53A and 800-171 security control assessments across Windows, network, application, and cloud environments. Policy review, personnel interviews, configuration examination, and control testing. Used Tenable Nessus and Wireshark to evaluate vulnerabilities and network safeguards. Wrote the Security Assessment Reports.</p>
+      <div class="verify" id="verify">
+        <div class="verify-text">
+          <h3>Verify it yourself</h3>
+          <p>The OSCAL evidence links point to a signed bundle in the repository. You can check the chain without taking my word for it. You'll need <code>cosign</code> and <code>sha256sum</code>.</p>
+        </div>
+        <div class="terminal">
+          <pre class="terminal-cmd"><code id="verify-cmd">git clone https://github.com/johnnyvaughanii-cyber/grc-pipeline.git
+cd grc-pipeline/week-4/bundle
+bash ../verify-evidence.sh evidence-bundle.tar.gz</code></pre>
+          <div class="terminal-actions">
+            <button type="button" class="btn" data-copy="verify-cmd">Copy commands</button>
+            <button type="button" class="btn btn-quiet" data-replay>Replay recorded output</button>
+          </div>
+          <pre class="terminal-out" aria-live="polite" hidden></pre>
+          <p class="terminal-note">The replay shows output recorded from <code>verify-evidence.sh</code>. It isn't a live run.</p>
+        </div>
+      </div>
+    </section>
 
-  <h2>Projects</h2>
+    <section class="projects" id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects</h2>
 
-  <h3>GRC Automation Toolkit</h3>
-  <p>Ten Python tools that automate compliance tasks I have done manually for years. Built independently, tested against synthetic data, all source public.</p>
-  <ul>
-    <li><strong>Access reconciliation</strong> — compares system accounts against an HR roster and flags access that should have been removed. Tested against a 505-record synthetic dataset with a known answer key; identified all 25 planted exceptions, 20 terminated users and 5 orphaned service accounts.</li>
-    <li><strong>Control testing sample generator</strong> — reproducible random sampling with a fixed seed, so a reviewer can re-create and defend the exact selection.</li>
-    <li><strong>Findings register analyzer</strong> — calculates finding age and groups by owner to show who is carrying the most and whose are oldest.</li>
-    <li><strong>Vendor risk scorer</strong> — applies a weighted rubric to questionnaire responses and assigns a risk tier for TPRM triage.</li>
-    <li><strong>Log analyzer</strong> — parses raw authentication logs and flags after-hours access, failed logins, and privileged activity.</li>
-    <li><strong>Access expiration checker</strong> — flags overdue and due-soon access reviews, recertifications, and vendor assessments.</li>
-    <li><strong>Findings summary</strong> — tallies a findings register by severity for an instant Critical/High/Medium/Low breakdown instead of counting by hand.</li>
-    <li><strong>Control crosswalk mapper</strong> — maps NIST SP 800-53 controls to ISO 27001 and reports both coverage and gaps, so overlapping framework obligations can be tested once.</li>
-    <li><strong>Control library</strong> — tracks a control inventory with owners and last-tested dates, and flags which controls are overdue for testing.</li>
-    <li><strong>Findings deduplicator</strong> — normalizes finding descriptions and removes duplicates, which matters when registers get merged across sources or assessment cycles.</li>
-  </ul>
-  <p>These are functional prototypes tested on synthetic data, not production systems. <a href="https://github.com/johnnyvaughanii-cyber/GRC-Automation">Source on GitHub</a></p>
-  
-  <h3>Quarterly UAR Agent</h3>
-  <p>An agent that runs a quarterly user access review and packages the result as a signed evidence bundle. Deterministic Python tools produce every count; the model routes to the right tool and writes the narrative. Every figure in the narrative appears verbatim in a tool result recorded in the manifest, so the summary can be checked against the data rather than trusted.</p>
-  <p>The bundle contains the tool output, a manifest carrying SHA-256 hashes of every input file and every tool result, the full conversation record, and a checksum file covering all of it. The directory is archived and signed with Cosign keyless, and verification fails on a one-byte change. Prototype on synthetic data. <a href="https://github.com/johnnyvaughanii-cyber/uar-agent">github.com/johnnyvaughanii-cyber/uar-agent</a></p>
-  <h3>This Site — AWS Static Hosting</h3>
-  <p>Deployed from a CloudFormation template: private S3 bucket, CloudFront distribution with Origin Access Control so nothing but CloudFront can read the bucket, HTTPS enforced. Infrastructure defined as code and reproducible.</p>
-  <p>I reviewed the template before running it and logged two gaps against my own site: encryption is not explicitly declared, and access logging is not enabled. Neither breaks anything — S3 encrypts by default — but a control that is not declared is a control an assessor cannot verify. <a href="https://github.com/johnnyvaughanii-cyber/portfolio-site">Source on GitHub</a></p>
+      <article class="project project-wide">
+        <div class="project-head">
+          <h3>IT audit toolkit</h3>
+          <a href="https://github.com/johnnyvaughanii-cyber/it-audit-toolkit">Source on GitHub</a>
+        </div>
+        <p class="live" data-live="it-audit-toolkit" hidden></p>
+        <p>Scripted, full-population control testing for on-premises Active Directory, written in PowerShell and read-only without exception. Each script tests one control objective against a population extract, and a reviewer who runs the same script against the same extract reaches the same result.</p>
+        <p>This is the audit side of my work, kept in a separate repository from the engineering projects on purpose. An auditor can't independently test a control they implemented.</p>
+        <table class="coverage">
+          <caption class="visually-hidden">Logical access control objectives and test status</caption>
+          <thead>
+            <tr><th scope="col">ID</th><th scope="col">Control objective</th><th scope="col">Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="cid">LA-01</td><td>Access revoked timely upon separation</td><td class="st st-ok">Complete</td></tr>
+            <tr><td class="cid">LA-02</td><td>Accounts attributable to an authorized individual</td><td class="st st-ok">Complete</td></tr>
+            <tr><td class="cid">LA-03</td><td>Inactive accounts identified and disabled</td><td class="st st-ok">Complete</td></tr>
+            <tr><td class="cid">LA-04</td><td>Privileged access requires MFA</td><td class="st st-ok">Complete</td></tr>
+            <tr><td class="cid">LA-05</td><td>Credentials rotated per policy</td><td class="st st-ok">Complete</td></tr>
+            <tr><td class="cid">LA-06</td><td>Privileged access appropriately segregated</td><td class="st st-open">Blocked</td></tr>
+            <tr><td class="cid">LA-07</td><td>Privileged access limited to those requiring it</td><td class="st st-ok">Complete</td></tr>
+          </tbody>
+        </table>
+        <p>Against the synthetic test data, LA-01 found 24 of 91 terminated personnel (26%) still holding enabled accounts. 5 of them held privileged access, including a Backup Operators account with no MFA enrollment. The data is synthetic, and the scripts haven't been run in a live engagement yet.</p>
+      </article>
 
-    <h3>GRC Engineering Pipeline — Complete</h3>
-  <p>A six-week build taking cloud infrastructure from working to audit-defensible: compliant infrastructure as code in Terraform, policy as code in Rego, a CI gate that blocks non-compliant pull requests, cryptographically signed evidence, and a NIST SP 800-53 control mapping in OSCAL. Adding one piece per week.</p>
+      <article class="project project-wide">
+        <div class="project-head">
+          <h3>GRC automation toolkit</h3>
+          <a href="https://github.com/johnnyvaughanii-cyber/GRC-Automation">Source on GitHub</a>
+        </div>
+        <p class="live" data-live="GRC-Automation" hidden></p>
+        <p>12 Python tools that automate compliance tasks I've done by hand for years. Built independently and tested against synthetic data. They're functional prototypes, not production systems.</p>
 
-  <p><strong>Week 1 — Compliant S3 Infrastructure as Code.</strong> Terraform module provisioning an S3 bucket that enforces five NIST SP 800-53 controls: SC-28 (server-side encryption by default), AC-3 (public access blocked on all four vectors), CM-6 (versioning and four mandatory tags via provider default_tags), and AU-3/AU-6 (access logging to a segregated log bucket). Emits machine-readable proof of every control as JSON rather than screenshots, and includes a Terraform output that surfaces the encryption algorithm in effect, so the attestation cannot drift from what it attests to. <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline">Source on GitHub</a></p>
-  <p><strong>Week 2 — Executable Controls.</strong> Three Rego policies that read Terraform plan output and return a verdict on SC-28, AC-3, and CM-6, each with unit tests covering both the compliant and violating case. The policies match resources by declared reference rather than by name, because at plan time the bucket name does not yet exist. First run against real infrastructure surfaced 36 false positives from a control scoped too broadly, documented in the repo alongside the fix. <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-2">Source on GitHub</a></p>
-  <p><strong>Week 3 — The CI Gate.</strong> GitHub Actions workflow that runs the policy library against a Terraform plan on every pull request and blocks the merge when a control fails. Conftest pinned to a fixed version for reproducibility, pipeline configured to fail closed, evidence uploaded on failed runs as well as passing ones. Demonstrated with two pull requests, one merged and one permanently blocked. The first attempt at the blocked case passed the gate, exposing that the SC-28 rule tested for the presence of an encryption resource without reading the algorithm it declared. <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-3">Source on GitHub</a></p>
-  <p><strong>Week 4 — Signed Evidence.</strong> Extended the pipeline to bundle its evidence, hash it, and sign it with Cosign keyless, so the signature is bound to the workflow and repository that produced it rather than to a stored key. Verification script checks integrity against the hash sidecar and authenticity against the Sigstore certificate with the signer identity pinned. Gate failures now sign their evidence too, since a run that blocked a merge is the run whose record matters most. Demonstrated with a tamper test: one byte appended to a 262-byte archive fails verification immediately. <a href="https://github.com/johnnyvaughanii-cyber/grc-pipeline/tree/main/week-4">Source on GitHub</a></p>
-  <p><strong>Week 5 — Native Monitoring Controls.</strong> Multi-region CloudTrail writing to a private, encrypted bucket with log file validation enabled, which produces signed hourly digest files and satisfies AU-2, AU-12, and AU-10. The bucket policy scopes the CloudTrail service principal with an aws:SourceArn condition bound to the specific trail, without which the trail creates but silently refuses to write. Findings captured as evidence and the infrastructure destroyed the same day. <a href="https://github.com/johnnyvaughanII-cyber/grc-pipeline/tree/main/week-5">Source on GitHub</a></p>
-  <p><strong>Week 6 — Machine-Readable Control Mapping.</strong> An OSCAL component definition and profile, both authored with trestle and both validating clean against OSCAL 1.2.1. The profile selects exactly four control IDs from the public NIST SP 800-53 Rev. 5 catalog. Each implemented requirement names the Terraform resource that enforces the control and carries an evidence link pointing at the Cosign-signed bundle the pipeline produced. Verified the traversal the way an outside assessor would: followed the evidence link from the OSCAL document, downloaded the bundle into a directory that had never held it, and confirmed both the hash and the signature. <a href="https://github.com/johnnyvaughanII-cyber/grc-pipeline/blob/main/week-6/PORTFOLIO-CASE-STUDY.md">Case study</a> — <a href="https://github.com/johnnyvaughanII-cyber/grc-pipeline/tree/main/week-6">Source on GitHub</a></p>
-  <h2>Frameworks</h2>
-  <p>NIST SP 800-53 and 800-53A, NIST SP 800-171, RMF, FedRAMP, ISO 27001, SOX ITGC, PCI DSS, GLBA, FFIEC, COBIT, GDPR, HIPAA, HITRUST, FIPS 199</p>
+        <div class="filters" role="group" aria-label="Filter tools">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="access" aria-pressed="false">Access</button>
+          <button type="button" class="chip" data-filter="testing" aria-pressed="false">Control testing</button>
+          <button type="button" class="chip" data-filter="findings" aria-pressed="false">Findings</button>
+          <button type="button" class="chip" data-filter="risk" aria-pressed="false">Risk and evidence</button>
+        </div>
+        <p class="filter-status" aria-live="polite">Showing all 12 tools</p>
 
-  <h2>Tools</h2>
-  <p>Python, pandas, Power BI, Excel, Git, SQL-adjacent data work, RSA Archer, OneTrust, Diligent, eMASS, Xacta, ServiceNow, Jira, Tenable Nessus, Wireshark, Proofpoint, AWS, Azure, Terraform</p>
+        <ul class="tools">
+          <li data-group="access"><strong>Access reconciliation.</strong> Compares system accounts against an HR roster and flags access that should have been removed. Tested against a 505-record synthetic dataset with a known answer key, it identified all 25 planted exceptions: 20 terminated users and 5 orphaned service accounts.</li>
+          <li data-group="access"><strong>Access expiration checker.</strong> Flags overdue and due-soon access reviews, recertifications, and vendor assessments, sorted by urgency.</li>
+          <li data-group="access"><strong>Access log analyzer.</strong> Parses raw authentication logs and flags after-hours access, failed logins, and privileged activity.</li>
+          <li data-group="testing"><strong>Control testing sample generator.</strong> Draws a reproducible random sample with a fixed seed, so a reviewer can re-create and defend the exact selection.</li>
+          <li data-group="testing"><strong>Control library.</strong> Tracks a control inventory with owners and last-tested dates, and flags which controls are overdue for testing.</li>
+          <li data-group="testing"><strong>Continuous control monitor.</strong> Runs control checks from the command line or a scheduler and writes every run, with its exception count, to a timestamped log. The expiration check is complete and the access check is next.</li>
+          <li data-group="findings"><strong>Findings summary.</strong> Tallies a findings register by severity for an instant Critical, High, Medium, and Low breakdown.</li>
+          <li data-group="findings"><strong>Findings register analyzer.</strong> Calculates finding age and groups by owner to show who's carrying the most and whose are oldest.</li>
+          <li data-group="findings"><strong>Findings deduplicator.</strong> Normalizes finding descriptions and removes duplicates, which matters when registers are merged across sources or assessment cycles.</li>
+          <li data-group="risk"><strong>Vendor risk scorer.</strong> Applies a weighted rubric to questionnaire responses and assigns a risk tier for TPRM triage.</li>
+          <li data-group="risk"><strong>Control crosswalk mapper.</strong> Maps NIST SP 800-53 controls to ISO 27001 and reports coverage and gaps, so overlapping framework obligations can be tested once.</li>
+          <li data-group="risk"><strong>API evidence puller.</strong> Pulls records from a REST API, walking pagination until the source is exhausted, and writes only the in-scope fields to a timestamped CSV per pull. Authentication is the next build.</li>
+        </ul>
+      </article>
 
-  <h2>Certifications</h2>
-  <p>CRISC — Certified in Risk and Information Systems Control, ISACA<br>
-  CTPRP — Certified Third Party Risk Professional, Shared Assessments</p>
+      <div class="project-pair">
+        <article class="project">
+          <div class="project-head">
+            <h3>Quarterly UAR agent</h3>
+            <a href="https://github.com/johnnyvaughanii-cyber/uar-agent">Source on GitHub</a>
+          </div>
+          <p class="live" data-live="uar-agent" hidden></p>
+          <p>An agent that runs a quarterly user access review and packages the result as a signed evidence bundle. Deterministic Python tools produce every count. The model routes to the right tool and writes the narrative, and every figure in the narrative appears verbatim in a tool result recorded in the manifest.</p>
+          <p>The bundle holds the tool output, a manifest with SHA-256 hashes of every input file and tool result, the full conversation record, and a checksum file covering all of it. It's archived and signed with Cosign keyless, and verification fails on a 1-byte change. Prototype on synthetic data.</p>
+        </article>
 
+        <article class="project">
+          <div class="project-head">
+            <h3>This site</h3>
+            <a href="https://github.com/johnnyvaughanii-cyber/portfolio-site">Source on GitHub</a>
+          </div>
+          <p class="live" data-live="portfolio-site" hidden></p>
+          <p>Deployed from a CloudFormation template: a private S3 bucket behind a CloudFront distribution with Origin Access Control, so nothing but CloudFront can read the bucket, and HTTPS enforced. GitHub Actions deploys every push to main. The commit activity on this page is read from GitHub's public API in your browser.</p>
+          <p>I reviewed the template before running it and logged 2 gaps against my own site: encryption isn't explicitly declared, and access logging isn't enabled. Neither breaks anything, since S3 encrypts by default, but a control that isn't declared is a control an assessor can't verify.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="activity" id="activity" aria-labelledby="activity-h">
+      <div class="section-head">
+        <h2 id="activity-h">Recent commits</h2>
+        <p>Pulled from GitHub when this page loads.</p>
+      </div>
+      <ol class="commits" data-commits>
+        <li class="commits-status">Loading recent commits from GitHub</li>
+      </ol>
+    </section>
+
+    <section class="experience" id="experience" aria-labelledby="experience-h">
+      <h2 id="experience-h">Experience</h2>
+      <p class="hint">Most recent first. Open a role for the detail.</p>
+      <div class="roles">
+        <details class="role">
+          <summary><span class="role-title">Global IS Risk and Compliance Analyst</span> <span class="role-org">PRA Group</span></summary>
+          <p>SOX ITGC, PCI DSS, and GDPR control evaluation at an international financial services organization. Ran recurring joiner, mover, and leaver reviews, role-based reviews, and privileged access reviews, including exception investigation and closure validation. Owned Proofpoint phishing simulations and the Power BI reporting behind them. Participated in the Change Advisory Board and assessed implementation risk.</p>
+        </details>
+        <details class="role">
+          <summary><span class="role-title">Senior Security Analyst</span> <span class="role-org">Azzur Group / SAP NS2</span></summary>
+          <p>Led the NIST SP 800-53 Revision 4 to Revision 5 control and documentation update for a DoD and U.S. Army-aligned SAP cloud authorization environment. Maintained System Security Plans, FIPS 199 categorizations, privacy documentation, and evidence repositories supporting FedRAMP and RMF authorization readiness. Ran functional and tabletop incident response and disaster recovery testing with engineers and system owners.</p>
+        </details>
+        <details class="role">
+          <summary><span class="role-title">Senior Associate, Third-Party Risk</span> <span class="role-org">KPMG</span></summary>
+          <p>Planned and executed 40+ global third-party technology risk assessments for financial services and healthcare clients, end to end: scoping, evidence requests, interviews, control evaluation, risk rating, reporting, remediation, and closure. Led ISO 27001 and GDPR assessments for Lloyds Banking Group. Helped establish the third-party risk program at City of Hope. Challenged incomplete evidence, unsupported control assertions, and remediation plans that didn't address the underlying requirement.</p>
+        </details>
+        <details class="role">
+          <summary><span class="role-title">Cybersecurity Specialist IV</span> <span class="role-org">MindPoint Group (Citizens Bank)</span></summary>
+          <p>Recurring third- and fourth-party risk assessments using a customized NIST SP 800-53 methodology aligned to GLBA, FFIEC, COBIT, and PCI DSS. Helped transition the program from the Shared Assessments SIG to a NIST-based model and standardize evidence, risk-rating, and reporting practices.</p>
+        </details>
+        <details class="role">
+          <summary><span class="role-title">Technical Writer / Cloud Implementation Specialist</span> <span class="role-org">NXT (Maryland FiRST)</span></summary>
+          <p>Developed cybersecurity, cloud, and system-support procedures for a public-safety telecommunications program, translating technical requirements into controlled documentation validated with application and system owners.</p>
+        </details>
+        <details class="role">
+          <summary><span class="role-title">IT Specialist / Security Controls Assessor</span> <span class="role-org">Paradigm</span></summary>
+          <p>NIST SP 800-53A and 800-171 security control assessments across Windows, network, application, and cloud environments. Policy review, personnel interviews, configuration examination, and control testing. Used Tenable Nessus and Wireshark to evaluate vulnerabilities and network safeguards, and wrote the Security Assessment Reports.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="credentials" id="credentials" aria-labelledby="credentials-h">
+      <h2 id="credentials-h">Credentials and community</h2>
+      <div class="cred-grid">
+        <div>
+          <h3>Certifications</h3>
+          <p><strong>CRISC</strong>, Certified in Risk and Information Systems Control, ISACA</p>
+          <p><strong>CTPRP</strong>, Certified Third Party Risk Professional, Shared Assessments</p>
+        </div>
+        <div>
+          <h3>Community</h3>
+          <p>Founding president of the Hampton Roads chapter of the GRC Engineering Club, covering Norfolk, Virginia Beach, Chesapeake, Portsmouth, Suffolk, Hampton, and Newport News. <a href="https://grcengclub.com/chapters/norfolk">Join the chapter</a></p>
+        </div>
+        <div>
+          <h3>Frameworks</h3>
+          <p>NIST SP 800-53 and 800-53A, NIST SP 800-171, RMF, FedRAMP, ISO 27001, SOX ITGC, PCI DSS, GLBA, FFIEC, COBIT, GDPR, HIPAA, HITRUST, FIPS 199, OSCAL</p>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <p>Python, PowerShell, pandas, Terraform, Open Policy Agent, Conftest, Cosign, GitHub Actions, AWS, CloudFormation, Azure, Power BI, Excel, Git, SQL-adjacent data work, RSA Archer, Diligent, eMASS, Xacta, ServiceNow, Jira, Tenable Nessus, Wireshark, Proofpoint</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built and deployed from <a href="https://github.com/johnnyvaughanii-cyber/portfolio-site">portfolio-site</a> with CloudFormation and GitHub Actions. Fonts are self-hosted, so this page makes no third-party requests beyond GitHub's public API.</p>
+  </footer>
 </body>
 </html>
